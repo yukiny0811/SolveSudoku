@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     var o: Int = 0
     var sol = 0
     
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet var o11: UIButton!
     @IBOutlet var o12: UIButton!
     @IBOutlet var o13: UIButton!
@@ -137,6 +139,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
         save()
         printBoard()
     }
@@ -1018,116 +1022,162 @@ class ViewController: UIViewController {
                 }
             }
         }
-//        for a in 0...1{
-//            for b in 0...1{
-//                for c in 0...1{
-//                    for d in 0...1{
-//                        for e in 0...1{
-//                            for f in 0...1{
-//                                for g in 0...1{
-//                                    for h in 0...1{
-//                                        for i in 0...1{
-//                                            for ra in 1...9{
-//                                                for rb in 1...9{
-//                                                    for rc in 1...9{
-//                                                        for rd in 1...9{
-//                                                            for re in 1...9{
-//                                                                for rf in 1...9{
-//                                                                    for rg in 1...9{
-//                                                                        for rh in 1...9{
-//                                                                            for ri in 1...9{
-//                                                                                for na in 0...8{
-//                                                                                    for nb in 0...8{
-//                                                                                        for nc in 0...8{
-//                                                                                            for nd in 0...8{
-//                                                                                                for ne in 0...8{
-//                                                                                                    for nf in 0...8{
-//                                                                                                        for ng in 0...8{
-//                                                                                                            for nh in 0...8{
-//                                                                                                                for ni in 0...8{
-//                                                                                                                    if get(ra, na, a){
-//                                                                                                                        if get(rb, nb, b){
-//                                                                                                                            if get(rc, nc, c){
-//                                                                                                                                if get(rd, nd, d){
-//                                                                                                                                    if get(re, ne, e){
-//                                                                                                                                        if get(rf, nf, f){
-//                                                                                                                                            if get(rg, ng, g){
-//                                                                                                                                                if get(rh, nh, h){
-//                                                                                                                                                    if get(ri, ni, i){
-//                                                                                                                                                        testSolve()
-//                                                                                                                                                        if checkIfCompleted(){
-//                                                                                                                                                            break
-//                                                                                                                                                        }
-//                                                                                                                                                    }
-//                                                                                                                                                }
-//                                                                                                                                            }
-//                                                                                                                                        }
-//                                                                                                                                    }
-//                                                                                                                                }
-//                                                                                                                            }
-//                                                                                                                        }
-//                                                                                                                    }
-//                                                                                                                }
-//                                                                                                            }
-//                                                                                                        }
-//                                                                                                    }
-//                                                                                                }
-//                                                                                            }
-//                                                                                        }
-//                                                                                    }
-//                                                                                }
-//                                                                            }
-//                                                                        }
-//                                                                    }
-//                                                                }
-//                                                            }
-//                                                        }
-//                                                    }
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
+    }
+    
+    func hideAllButtons(){
+        o11.isHidden = true
+        o12.isHidden = true
+        o13.isHidden = true
+        o14.isHidden = true
+        o15.isHidden = true
+        o16.isHidden = true
+        o17.isHidden = true
+        o18.isHidden = true
+        o19.isHidden = true
+        
+        o21.isHidden = true
+        o22.isHidden = true
+        o23.isHidden = true
+        o24.isHidden = true
+        o25.isHidden = true
+        o26.isHidden = true
+        o27.isHidden = true
+        o28.isHidden = true
+        o29.isHidden = true
+        
+        o31.isHidden = true
+        o32.isHidden = true
+        o33.isHidden = true
+        o34.isHidden = true
+        o35.isHidden = true
+        o36.isHidden = true
+        o37.isHidden = true
+        o38.isHidden = true
+        o39.isHidden = true
+        
+        o41.isHidden = true
+        o42.isHidden = true
+        o43.isHidden = true
+        o44.isHidden = true
+        o45.isHidden = true
+        o46.isHidden = true
+        o47.isHidden = true
+        o48.isHidden = true
+        o49.isHidden = true
+        
+        o51.isHidden = true
+        o52.isHidden = true
+        o53.isHidden = true
+        o54.isHidden = true
+        o55.isHidden = true
+        o56.isHidden = true
+        o57.isHidden = true
+        o58.isHidden = true
+        o59.isHidden = true
+        
+        o61.isHidden = true
+        o62.isHidden = true
+        o63.isHidden = true
+        o64.isHidden = true
+        o65.isHidden = true
+        o66.isHidden = true
+        o67.isHidden = true
+        o68.isHidden = true
+        o69.isHidden = true
+        
+        o71.isHidden = true
+        o72.isHidden = true
+        o73.isHidden = true
+        o74.isHidden = true
+        o75.isHidden = true
+        o76.isHidden = true
+        o77.isHidden = true
+        o78.isHidden = true
+        o79.isHidden = true
+        
+        o81.isHidden = true
+        o82.isHidden = true
+        o83.isHidden = true
+        o84.isHidden = true
+        o85.isHidden = true
+        o86.isHidden = true
+        o87.isHidden = true
+        o88.isHidden = true
+        o89.isHidden = true
+        
+        o91.isHidden = true
+        o92.isHidden = true
+        o93.isHidden = true
+        o94.isHidden = true
+        o95.isHidden = true
+        o96.isHidden = true
+        o97.isHidden = true
+        o98.isHidden = true
+        o99.isHidden = true
+        
+        
     }
 
     func testComp(){
-        var count = 0
-        for r in 1...9{
-            save2()
-            for n in 0...8{
-                save3()
-                for v in range(r, n){
-                    save4()
-                    if get(r, n, v){
-                        testSolve()
-                        print("testComp")
-                        if checkIfCompleted(){
-                            printAll()
-                            printBoard()
-                            count += 1
-                            saveAll(String(count))
-                            if lastCheck() == true{
-                                print("lastcheck")
-                                return
-                            } else {
-                                print("lastcheck is false")
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
+        DispatchQueue(label: "asdfg").async {
+            var count = 0
+            for r in 1...9{
+                self.save2()
+                for n in 0...8{
+                    self.save3()
+                    for v in self.range(r, n){
+                        self.save4()
+                        if self.get(r, n, v){
+                            self.testSolve()
+                            print("testComp")
+                            if self.checkIfCompleted(){
+                                self.printAll()
+                                self.printBoard()
+                                count += 1
+                                self.saveAll(String(count))
+                                if self.lastCheck() == true{
+                                    print("lastcheck")
+                                    DispatchQueue.main.async {
+                                        self.activityIndicator.isHidden = true
+                                        self.activityIndicator.stopAnimating()
+                                    }
+                                    return
+                                } else {
+                                    print("lastcheck is false")
+                                }
                             }
                         }
+                        self.load4()
                     }
-                    load4()
+                    self.load3()
                 }
-                load3()
+                self.load2()
             }
-            load2()
+            print(count)
+            count = 0
+            self.load()
+            self.clearTitle()
+            let alertController = UIAlertController(title: "答えがありません", message: "", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertAction(title: "OK", style: .default)
+            alertController.addAction(alert)
+            self.present(alertController, animated: true, completion: nil)
+        
+            DispatchQueue.main.async {
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+            }
+            
         }
-        print(count)
-        count = 0
+        
+        
+        //        activityIndicator.isHidden = true
+        //        DispatchQueue.main.async {
+        
+        //            self.activityIndicator.stopAnimating()
+        //        }
+        
     }
     //答えの中から正解を選ぶ
     //row col gの中身をチェックするfunc
@@ -1333,252 +1383,6 @@ class ViewController: UIViewController {
         
     }
     
-//    func solveAll(){
-//        save()
-//        while checkIfCompleted() == false{
-//            for b in 0...8{
-//                load()
-//               if row1[b].count != 1{
-//                    for a in 0...row1[b].count-1{
-//                        o = 10 + b + 1
-//                        setNumber(row1[b][a])
-//                        testSolve()
-//                        if checkIfCompleted() == true{
-//                            return
-//                        }
-//                        save2()
-//                        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(solveR2), userInfo: nil, repeats: false)
-//                    }
-//                }
-//            }
-//        }
-//    }
-//    func solveR2(){
-//        for b in 0...8{
-//            load2()
-//            if row2[b].count != 1{
-//                for a in 0...row2[b].count-1{
-//                    o = 20 + b + 1
-//                    setNumber(row2[b][a])
-//                    testSolve()
-//                    if checkIfCompleted() == true{
-//                        return
-//                    }
-//                    save3()
-//                    _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(solveR3), userInfo: nil, repeats: false)
-//                }
-//            }
-//        }
-//    }
-//    func solveR3(){
-//        for b in 0...8{
-//            load3()
-//            if row3[b].count != 1{
-//                for a in 0...row3[b].count-1{
-//                    o = 30 + b + 1
-//                    setNumber(row3[b][a])
-//                    testSolve()
-//                    if checkIfCompleted() == true{
-//                        return
-//                    }
-//                    save4()
-//                    _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(solveR4), userInfo: nil, repeats: false)
-//                }
-//            }
-//        }
-//    }
-//    func solveR4(){
-//        for b in 0...8{
-//            load4()
-//            if row4[b].count != 1{
-//                for a in 0...row4[b].count-1{
-//                    o = 40 + b + 1
-//                    setNumber(row4[b][a])
-//                    testSolve()
-//                    if checkIfCompleted() == true{
-//                        return
-//                    }
-//                    save5()
-//                    _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(solveR5), userInfo: nil, repeats: false)
-//                }
-//            }
-//        }
-//    }
-//    func solveR5(){
-//        for b in 0...8{
-//            load5()
-//            if row5[b].count != 1{
-//                for a in 0...row5[b].count-1{
-//                    o = 50 + b + 1
-//                    setNumber(row5[b][a])
-//                    testSolve()
-//                    if checkIfCompleted() == true{
-//                        return
-//                    }
-//                    save6()
-//                    _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(solveR6), userInfo: nil, repeats: false)
-//                }
-//            }
-//        }
-//    }
-//    func solveR6(){
-//        for b in 0...8{
-//            load6()
-//            if row6[b].count != 1{
-//                for a in 0...row6[b].count-1{
-//                    o = 60 + b + 1
-//                    setNumber(row6[b][a])
-//                    testSolve()
-//                    if checkIfCompleted() == true{
-//                        return
-//                    }
-//                    save7()
-//                    _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(solveR7), userInfo: nil, repeats: false)
-//                }
-//            }
-//        }
-//    }
-//    func solveR7(){
-//        for b in 0...8{
-//            load7()
-//            if row7[b].count != 1{
-//                for a in 0...row7[b].count-1{
-//                    o = 70 + b + 1
-//                    setNumber(row7[b][a])
-//                    testSolve()
-//                    if checkIfCompleted() == true{
-//                        return
-//                    }
-//                    save8()
-//                    _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(solveR8), userInfo: nil, repeats: false)
-//                }
-//            }
-//        }
-//    }
-//    func solveR8(){
-//        for b in 0...8{
-//            load8()
-//            if row8[b].count != 1{
-//                for a in 0...row8[b].count-1{
-//                    o = 80 + b + 1
-//                    setNumber(row8[b][a])
-//                    testSolve()
-//                    if checkIfCompleted() == true{
-//                        return
-//                    }
-//                    save9()
-//                    _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(solveR9), userInfo: nil, repeats: false)
-//                }
-//            }
-//        }
-//    }
-//    func solveR9(){
-//        for b in 0...8{
-//            load9()
-//            if row9[b].count != 1{
-//                for a in 0...row9[b].count-1{
-//                    o = 90 + b + 1
-//                    setNumber(row9[b][a])
-//                    testSolve()
-//                    if checkIfCompleted() == true{
-//                        return
-//                    }
-//                }
-//            }
-//        }
-//    }
-    
-//    var r1used = false
-//    var r2used = false
-//    var r3used = false
-//    var r4used = false
-//    var r5used = false
-//    var r6used = false
-//    var r7used = false
-//    var r8used = false
-//    var r9used = false
-//    var c1used = false
-//    var c2used = false
-//    var c3used = false
-//    var c4used = false
-//    var c5used = false
-//    var c6used = false
-//    var c7used = false
-//    var c8used = false
-//    var c9used = false
-//    var g1used = false
-//    var g2used = false
-//    var g3used = false
-//    var g4used = false
-//    var g5used = false
-//    var g6used = false
-//    var g7used = false
-//    var g8used = false
-//    var g9used = false
-//    
-//    var eRangeA = 0...8
-//    var eRangeB = 0...8
-//    
-//    var Count = 0
-//    
-//    func estimate(){
-//        for a in eRangeA{
-//            for b in 0...1{
-//                if row1[a].count == 2{
-//                    save()
-//                    o = 10 + a + 1
-//                    setNumber(row1[a][b])
-//                    testSolve()
-//                    if checkIfCompleted() == true{
-//                        save()
-//                        return
-//                    }
-//                }
-//            }
-//        }
-//    }
-    
-//    func testSolve(){
-//        var a = 0
-//        let range = 1...10
-//        repeat{
-//            check()
-//            check2()
-//            check3()
-//            a += 1
-//            if a > 10{
-//                a = 0
-//            }
-//        } while range.contains(a)
-//    }
-//    
-//    func estimate(){
-//        if bool == false{
-//            for a in 0...8{
-//                if row1[a].count == 2{
-//                    bool2 = true
-//                    o = 10 + a + 1
-//                    save()
-//                    setNumber(row1[a][0])
-//                    testSolve()
-//                    if checkIfCompleted() == true{
-////                        timer.invalidate()
-//                        return
-//                    } else if checkIfCompleted() == false{
-//                        saveLoad()
-//                        setNumber(row1[a][1])
-//                        testSolve()
-//                        if checkIfCompleted() == true{
-////                            timer.invalidate()
-//                            return
-//                        } else if checkIfCompleted() == false{
-//                            saveLoad()
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
     
     func check(){
         for a in 0...8{
@@ -1760,6 +1564,7 @@ class ViewController: UIViewController {
 //    let AAA: [Int?]? = nil
     
     func eraseNumber(){
+        print(history)
         if history.keys.contains(o) == true{
             history[o] = nil
             clearTitle()
@@ -4707,6 +4512,10 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func Clear(){
+        load()
+        clearTitle()
+    }
     @IBAction func bErase(){
         eraseNumber()
     }
